@@ -8,6 +8,10 @@ import {
   isValidUsername,
   validateUserInput,
 } from '../src/core';
+import { beforeEach } from 'vitest';
+import { beforeAll } from 'vitest';
+import { afterEach } from 'vitest';
+import { afterAll } from 'vitest';
 
 describe('getCoupons', () => {
   it('should return an array of coupons', () => {
@@ -161,4 +165,24 @@ describe('fetchData', () => {
       expect(error.reason).toMatch(/fail/i);
     }
   });
+});
+
+describe('test suite', () => {
+  beforeAll(() => {
+    console.log('beforeAll call');
+  });
+  beforeEach(() => {
+    console.log('beforeEach call');
+  });
+
+  afterEach(() => {
+    console.log('afterEach call');
+  });
+
+  afterAll(() => {
+    console.log('afterAll call');
+  });
+
+  it('test case 1', () => {});
+  it('test case 2', () => {});
 });
