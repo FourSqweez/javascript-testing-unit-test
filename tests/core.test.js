@@ -153,10 +153,9 @@ describe('canDrive', () => {
 });
 
 describe('fetchData', () => {
-  it('should return a promise that will resolve to an array of numbers', () => {
-    fetchData().then((result) => {
-      expect(Array.isArray(result)).toBe(true);
-      expect(result.length).toBeGreaterThan(0);
-    });
+  it('should return a promise that will resolve to an array of numbers', async () => {
+    const result = await fetchData();
+    expect(Array.isArray(result)).toBe(true);
+    expect(result.length).toBeGreaterThan(0);
   });
 });
