@@ -131,7 +131,7 @@ describe('signUp', () => {
   it('should send the welcome email if email is valid', async () => {
     await signUp(email);
 
-    expect(sendEmail).toHaveBeenCalled();
+    expect(sendEmail).toHaveBeenCalledOnce();
     const args = vi.mocked(sendEmail).mock.calls[0];
     expect(args[0]).toBe(email);
     expect(args[1]).toMatch(/welcome/i);
